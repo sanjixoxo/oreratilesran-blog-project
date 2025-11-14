@@ -32,8 +32,10 @@ function Footer() {
         <p style={styles.footerText}>
           Created by <strong>Oreratile Ranwashe</strong>
         </p>
-        <p style={styles.footerCopy}>© 2025 BlogSphere. All rights reserved.</p>
-      </div>
+        <p style={styles.footerCopy}>
+        © {new Date().getFullYear()} BlogSphere. All rights reserved.
+        </p>
+      </div>run
     </footer>
   );
 }
