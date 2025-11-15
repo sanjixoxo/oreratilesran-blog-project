@@ -209,5 +209,5 @@ function AuthForm({ type, onSuccess, onSwitch }) {
     </div>
   );
 }
-//Just a place holder so deployment can work
+
 export default AuthForm;
