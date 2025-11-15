@@ -1,4 +1,4 @@
-/*import React from 'react';
+import React from 'react';
 
 const API_URL = 'https://oreratile-backend-4.onrender.com/api/posts';
 
@@ -322,92 +322,5 @@ function PostList({ posts, loading, onSelectPost, onEditPost, user }) {
   );
 }
 
-export default PostList;*/
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { styles as sharedStyles } from './Styles.js';
-
-function HomePage({ posts }) {
-  const styles = {
-    container: {
-      maxWidth: '900px',
-      margin: '0 auto',
-      padding: '2rem'
-    },
-    intro: {
-      textAlign: 'center',
-      marginBottom: '2.5rem'
-    },
-    introTitle: {
-      fontSize: '2rem',
-      fontWeight: '700',
-      color: '#0f172a',
-      marginBottom: '0.5rem'
-    },
-    introSubtitle: {
-      fontSize: '1.125rem',
-      color: '#64748b'
-    },
-    postsContainer: {
-      display: 'grid',
-      gridTemplateColumns: '1fr 1fr',
-      gap: '1.5rem'
-    },
-    noPosts: {
-      textAlign: 'center',
-      padding: '4rem 2rem',
-      background: '#f8fafc',
-      borderRadius: '0.75rem',
-      border: '1px solid #e5e7eb',
-      color: '#64748b'
-    },
-    createLink: {
-      marginTop: '1rem',
-      display: 'inline-block',
-      color: '#6366f1',
-      fontWeight: '600',
-      textDecoration: 'none'
-    }
-  };
-
-  return (
-    <div style={styles.container}>
-      <div style={styles.intro}>
-        <h1 style={styles.introTitle}>
-          Discover stories, thinking, and expertise
-        </h1>
-        <p style={styles.introSubtitle}>
-          Read and share ideas from independent writers and experts on any topic
-        </p>
-      </div>
-
-      {posts && posts.length > 0 ? (
-        <div style={styles.postsContainer}>
-          {posts.map((post) => (
-            <div key={post.id} style={sharedStyles.card}>
-              <Link to={`/posts/${post.id}`} style={{ textDecoration: 'none' }}>
-                <h2 style={{ fontSize: '1.25rem', fontWeight: '600', color: '#0f172a' }}>
-                  {post.title}
-                </h2>
-                {post.subtitle && (
-                  <p style={{ color: '#64748b' }}>{post.subtitle}</p>
-                )}
-              </Link>
-            </div>
-          ))}
-        </div>
-      ) : (
-        <div style={styles.noPosts}>
-          <p>No posts yet</p>
-          <p>Be the first to share your story with the world</p>
-          <Link to="/create" style={styles.createLink}>
-            Create your first post
-          </Link>
-        </div>
-      )}
-    </div>
-  );
-}
-
-export default HomePage;
+export default PostList;
 
