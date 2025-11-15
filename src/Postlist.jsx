@@ -1,6 +1,6 @@
-import React from 'react';
+/*import React from 'react';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://oreratile-backend-4.onrender.com/api/posts';
 
 function PostList({ posts, loading, onSelectPost, onEditPost, user }) {
   const handleDelete = async (postId) => {
@@ -321,5 +321,31 @@ function PostList({ posts, loading, onSelectPost, onEditPost, user }) {
     </div>
   );
 }
+
+export default PostList;*/
+import React, { useEffect, useState } from 'react';
+
+
+const PostList = () => {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    fetch('https://oreratile-backend-4.onrender.com/api/posts')
+      .then(res => res.json())
+      .then(data => setPosts(data))
+      .catch(err => console.error(err));
+  }, []);
+
+  return (
+    <div>
+      {posts.map(post => (
+        <div key={post.id}>
+          <h2>{post.title}</h2>
+          <p>{post.subtitle}</p>
+        </div>
+      ))}
+    </div>
+  );
+};
 
 export default PostList;
