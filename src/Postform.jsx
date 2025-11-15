@@ -23,6 +23,8 @@ function PostForm({ user, post, onSuccess, onCancel }) {
     }
   };
 
+  //testing before backend deployment
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
